@@ -24,9 +24,9 @@ resource "google_compute_instance" "adesanu" {
     }
   }
 
-  metadata = {
-    "ssk-keys" = var.pub_key
-  }
+#   metadata = {
+#     ssh-keys = var.pub_key
+#   }
 
 }
 
@@ -36,4 +36,10 @@ resource "google_compute_instance" "adesanu" {
 # resource "google_os_login_ssh_public_key" "default" {
 #   user = data.google_client_openid_userinfo.me.email
 #   key  = file("~/.ssh/gcp-instance-adesanu.pub") # path/to/ssl/id_rsa.pub
+# }
+
+# resource "google_compute_project_metadata" "my_ssh_key" {
+#   metadata = {
+#     ssh-keys = var.pub_key
+#   }
 # }
